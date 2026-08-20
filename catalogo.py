@@ -30,15 +30,25 @@ def agregar_libro():
 
     print("Libro agregado correctamente.")
 
+def ver_libros():
+    for nombre, datos in catalogo_libros.items():
+        print("\nLibro:", nombre)
+        print("Autor:", datos["autor"])
+        print("Año:", datos["anio"])
+        print("Leído:", datos["leido"])
+
 while True:
-    print("\n1. Agregar libro")
-    print("2. Salir")
+    print("\n1. Ver todos los libros")
+    print("2. Agregar libro")
+    print("3. Salir")
 
     opcion = input("Seleccione una opción: ")
 
     if opcion == "1":
-        agregar_libro()
+        ver_libros()
     elif opcion == "2":
+        agregar_libro()
+    elif opcion == "3":
         break
     else:
         print("Opción inválida.")
